@@ -1,6 +1,8 @@
 const mongoose = require("mongoose");
 
-const { Schema } = mongoose;
+const {
+  Schema
+} = mongoose;
 
 const savedLocationSchema = new Schema({
   title: {
@@ -28,14 +30,14 @@ const savedLocationSchema = new Schema({
     max: 10,
     default: 0
   },
-  comments: [
-    {
-      user: ObjectId,
-      message: string,
-      body: String,
-      date: Date
-    }
-  ]
+  comments: [{
+    user: String,
+    message: String,
+    body: String,
+    date: Date
+  }]
 });
 
 const SavedLocation = mongoose.model("SavedLocation", savedLocationSchema);
+
+module.exports = SavedLocation;

@@ -9,10 +9,10 @@ require("dotenv").config();
 
 const app = express();
 
-// mongoose.connect(process.env.MONGO_DB_URL, {
-//     useNewUrlParser: true,
-//     useUnifiedTopology: true
-// });
+mongoose.connect(process.env.MONGO_DB_URL, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+});
 
 app.use(morgan("common"));
 app.use(helmet());
